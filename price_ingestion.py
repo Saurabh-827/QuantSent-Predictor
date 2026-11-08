@@ -11,4 +11,4 @@ def get_prices(ticker, start, end):
     return df
 
 if __name__ == "__main__":
-    get_prices("TSLA", start="2015-01-01", end="2026-11-05")
+    get_prices("TSLA", start="2015-01-01", end="2026-11-10")
