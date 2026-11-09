@@ -26,7 +26,7 @@ def price_features(prices):
     p["ret_l4"] = p["ret"].shift(4)
     p["mom5"] = p["ret"].rolling(5).sum()
     p["vol10"] = p["ret"].rolling(10).std()
-    p["dow"] = p["date"].dt.dayofweek
+    p["dow"] = p["date"].dt.day_of_week
 
     for h in HORIZONS:
         p[f"y{h}"] = p["ret"].shift(-(1 + h))
