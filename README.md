@@ -26,9 +26,13 @@ pip install -r requirements.txt
 cp .env.example .env     # then fill in your own keys
 ```
 
-`.env` needs `APIFY_TOKEN` and `TAVILY_API_KEY`. Both services have free tiers. The live scrape of 181 daily windows costs about $1 on Apify. The Kaggle dataset is public; if kagglehub asks for credentials, set `KAGGLE_USERNAME` and `KAGGLE_KEY`.
+`.env` needs `TAVILY_API_KEY`, and `APIFY_TOKEN` only if you scrape fresh live data.. Both services have free tiers. The live scrape of 181 daily windows costs about $1 on Apify. The Kaggle dataset is public; if kagglehub asks for credentials, set `KAGGLE_USERNAME` and `KAGGLE_KEY`.
 
 ## Run order
+
+Run everything with one command: `bash run_all.sh`. By default the pipeline uses the bundled live tweet sample in `sample_data/`. Run `RUN_APIFY=1 bash run_all.sh` to scrape fresh data with your own Apify token.
+
+Or step by step:
 
 ```bash
 python3 price_ingestion.py     # TSLA daily prices      -> data/TSLA_prices.csv
